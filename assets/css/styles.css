@@ -362,13 +362,8 @@ p{margin:0}
   .hero-visual{margin-top:20px}
   .hero-watch-item{width:clamp(100px,28vw,160px)}
 
-  .product-grid{grid-template-columns:1fr;gap:16px;display:flex;overflow-x:auto;
-    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:12px}
-  .product-grid::-webkit-scrollbar{display:none}
-  .product-card{flex:0 0 85vw;scroll-snap-align:start}
-  .product-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
-  .product-dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:background .2s}
-  .product-dot.active{background:var(--text)}
+  .product-grid{grid-template-columns:1fr;gap:20px}
+  .product-card{width:100%}
 
   .story-grid{grid-template-columns:1fr}
   .story-visual{min-height:280px}
@@ -941,10 +936,9 @@ body[data-product="mission-super-blue"] [data-planet="lua"]{--p-bg:#0a1530;--p-b
   /* Specs completos + FAQ */
   .specs-layout{grid-template-columns:1fr;gap:32px}
 
-  /* Related: scroll horizontal */
-  .related-grid{grid-template-columns:1fr;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:16px}
-  .related-grid::-webkit-scrollbar{display:none}
-  .related-grid .related-card{flex:0 0 78vw;scroll-snap-align:start}
+  /* Related: stack vertical no mobile (evita scroll-trap horizontal) */
+  .related-grid{grid-template-columns:1fr;gap:20px}
+  .related-grid .related-card{width:100%}
 
   .page-produto .header-product-name{display:block}
   .site-header.show-product-name .header-product-name{opacity:1}

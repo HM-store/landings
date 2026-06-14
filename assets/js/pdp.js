@@ -8,10 +8,10 @@
   const imgBase = `assets/img/watches/${w.id}/`;
 
   function setMeta() {
-    const title = `MoonSwatch ${w.name} | Comprar Original — HM Store`;
+    const title = `MoonSwatch ${w.name} — Releitura HM Store`;
     const desc = w.description;
     document.title = title;
-    document.getElementById("page-h1").textContent = `MoonSwatch ${w.name} — Comprar Original`;
+    document.getElementById("page-h1").textContent = `MoonSwatch ${w.name} — Releitura HM Store`;
     const set = (sel, attr, val) => { const el = document.querySelector(sel); if (el) el.setAttribute(attr, val); };
     set('meta[name="description"]', "content", desc);
     set('meta[property="og:title"]', "content", title);
@@ -30,14 +30,12 @@
     const hero = document.getElementById("pdp-hero");
     hero.setAttribute("data-planet", w.planet);
 
-    const heroTag = w.heroTag || `Bioceramic · ${w.caseColor}`;
+    const heroTag = w.heroTag || `Releitura · biocerâmica · ${w.caseColor}`;
     const heroHeadline = (w.heroHeadline || w.subtitle).replace(/\n/g, "<br>");
     const heroSub = w.heroSub || w.description;
     const ctaHref = window.HM.enjoeiLink(w);
     const ctaText = w.limited ? "Consultar disponibilidade" : "Comprar no Enjoei";
-    const priceLine = w.price
-      ? `<span class="hero-price-now">${window.HM.money(w.price)}</span><span class="hero-price-installments">ou ${w.installments}x de ${window.HM.money(Math.ceil(w.price / w.installments))} sem juros</span>`
-      : `<span class="hero-price-now">Sob consulta</span>`;
+    const priceLine = `<span class="hero-price-now" style="font-size:14px;letter-spacing:.12em">Ver preço no Enjoei</span>`;
 
     hero.innerHTML = `
       <div class="pdp-hero-pattern" aria-hidden="true">${patternSVG(w.planet)}</div>
@@ -51,7 +49,7 @@
             ${ctaText}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
-          <p class="pdp-hero-microcopy">100% original · Certificado Swatch 2 anos · Envio para todo Brasil</p>
+          <p class="pdp-hero-microcopy">Compra protegida pelo Enjoei · 7 dias para devolver · Envio para todo Brasil</p>
         </div>
         <div class="pdp-hero-visual">
           <img src="${imgBase}${w.images[0]}" alt="${w.name}" class="pdp-hero-img" loading="eager">
@@ -186,21 +184,18 @@
 
   // ---------- INFO (coluna direita, sem duplicação) ----------
   function renderInfo() {
-    const priceHTML = w.price
-      ? `<span class="pdp-price-now">${window.HM.money(w.price)}</span>
-         <span class="pdp-price-installments">ou ${w.installments}x de ${window.HM.money(Math.ceil(w.price / w.installments))} sem juros</span>`
-      : `<span class="pdp-price-now" style="font-size:16px">Sob consulta</span>`;
+    const priceHTML = `<span class="pdp-price-now" style="font-size:15px;letter-spacing:.12em">Ver preço no Enjoei</span>`;
 
     const ctaHref = window.HM.enjoeiLink(w);
     const ctaText = w.limited ? "Consultar disponibilidade" : "Comprar no Enjoei";
     const ctaMicro = w.limited
       ? "Estoque limitado. Disponibilidade sujeita a confirmação."
-      : "Compra protegida pelo Enjoei. Até 12x sem juros.";
+      : "Compra protegida pelo Enjoei. 7 dias para devolver.";
 
     const icon = window.HMUtil ? window.HMUtil.icon : () => "";
 
     document.getElementById("pdp-info").innerHTML = `
-      <span class="pdp-brand">Omega × Swatch</span>
+      <span class="pdp-brand">Releitura HM · MoonSwatch</span>
       <h2 class="pdp-name" id="pdp-title">${w.name}</h2>
       <span class="pdp-ref">Ref. ${w.ref}</span>
       <p class="pdp-subtitle">${w.subtitle}</p>
@@ -214,9 +209,9 @@
         ${!w.limited ? `<a class="pdp-cta-secondary" href="${window.HM.wa(`Tenho uma dúvida sobre o ${w.name} (${w.ref}).`)}" target="_blank" rel="noopener">Dúvidas? Fale no WhatsApp</a>` : ""}
       </div>
       <div class="pdp-trust">
-        <div class="pdp-trust-item">${icon("check", 18)}<span>100% original com certificado Swatch</span></div>
-        <div class="pdp-trust-item">${icon("truck", 18)}<span>Envio seguro e rastreado para todo o Brasil</span></div>
-        <div class="pdp-trust-item">${icon("whats", 18)}<span>Atendimento no WhatsApp</span></div>
+        <div class="pdp-trust-item">${icon("check", 18)}<span>Fotos reais — você compra o que vê</span></div>
+        <div class="pdp-trust-item">${icon("truck", 18)}<span>Envio rastreado para todo o Brasil</span></div>
+        <div class="pdp-trust-item">${icon("whats", 18)}<span>Atendimento no WhatsApp · 7 dias pra devolver</span></div>
       </div>`;
 
     renderStickyCTA(ctaHref, ctaText);
@@ -226,10 +221,7 @@
     const bar = document.createElement("div");
     bar.className = "pdp-sticky-cta";
     bar.id = "pdp-sticky-cta";
-    bar.innerHTML = w.price
-      ? `<span class="pdp-sticky-price">${window.HM.money(w.price)}</span>
-         <a class="btn btn-dark pdp-sticky-btn" href="${href}" target="_blank" rel="noopener">${text}</a>`
-      : `<a class="btn btn-dark pdp-sticky-btn" href="${href}" target="_blank" rel="noopener" style="width:100%">${text}</a>`;
+    bar.innerHTML = `<a class="btn btn-dark pdp-sticky-btn" href="${href}" target="_blank" rel="noopener" style="width:100%">${text}</a>`;
     document.body.appendChild(bar);
   }
 
@@ -302,7 +294,7 @@
   function renderSpecsVisual() {
     const wrap = document.getElementById("pdp-specs-visual");
     const highlights = w.specHighlights || [
-      { label: "Material", value: "Bioceramic" },
+      { label: "Material", value: "Biocerâmica" },
       { label: "Diâmetro", value: "42mm" },
       { label: "Movimento", value: "Quartzo" },
       { label: "Resistência", value: "3 bar" },
@@ -430,7 +422,7 @@
         </div>
         <div class="related-card-body">
           <span class="related-card-name">${r.name}</span>
-          <span class="related-card-price">${r.price ? window.HM.money(r.price) : "Sob consulta"}</span>
+          <span class="related-card-price">Ver no Enjoei</span>
         </div>
       </a>`).join("");
   }
@@ -439,10 +431,10 @@
     const data = {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": `Swatch x Omega MoonSwatch ${w.name}`,
+      "name": `${w.name} — Releitura HM Store`,
       "description": w.description,
       "sku": w.ref,
-      "brand": { "@type": "Brand", "name": "Swatch" },
+      "brand": { "@type": "Brand", "name": "HM Store" },
       "material": "Biocerâmica",
       "color": `${w.caseColor}/${w.dialColor}`,
       "offers": {
@@ -451,10 +443,10 @@
         "availability": w.limited
           ? "https://schema.org/LimitedAvailability"
           : "https://schema.org/InStock",
+        "url": window.HM.enjoeiLink(w),
         "seller": { "@type": "Organization", "name": "HM Store" },
       },
     };
-    if (w.price) data.offers.price = w.price.toFixed(2);
     document.getElementById("ld-product").textContent = JSON.stringify(data);
   }
 

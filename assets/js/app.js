@@ -72,7 +72,7 @@
           <div class="footer-top">
             <div class="footer-brand">
               <span class="brand-name">HM Store</span>
-              <span class="tagline">${S.tagline}<br>Peças originais. Envio para todo o Brasil.</span>
+              <span class="tagline">${S.tagline}<br>Releituras curadas. Envio para todo o Brasil.</span>
               <div class="social">
                 <a href="https://instagram.com/${S.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon("insta", 18)}</a>
                 <a href="${window.HM.wa()}" target="_blank" rel="noopener" aria-label="WhatsApp">${icon("whats", 18)}</a>
