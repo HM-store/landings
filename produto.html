@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoonSwatch | HM Store</title>
+<meta name="description" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="product">
+<meta name="theme-color" content="#0A0A0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="page-produto">
+
+<div class="loading-overlay"><span class="logo-text">HM Store</span></div>
+
+<h1 class="sr-only" id="page-h1"></h1>
+
+<main>
+  <!-- HERO TEMÁTICO FULL-BLEED -->
+  <section class="pdp-hero" id="pdp-hero"></section>
+
+  <!-- BREADCRUMB + INFO -->
+  <div class="pdp-shell">
+    <div class="container-wide">
+      <nav class="breadcrumb" aria-label="Você está em" id="breadcrumb"></nav>
+
+      <section class="pdp-detail">
+        <div class="pdp-detail-layout">
+          <div class="pdp-gallery" id="pdp-gallery"></div>
+          <div class="pdp-info" id="pdp-info"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- BAND TEMÁTICA (display type gigante) -->
+  <section class="pdp-band" id="pdp-band"></section>
+
+  <!-- EDITORIAL 1 — split-screen narrativo -->
+  <section class="pdp-editorial" id="pdp-editorial-1"></section>
+
+  <!-- SPECS DETALHADAS (Swatch-style: imagem + lista) -->
+  <section class="pdp-spec-detail" id="pdp-spec-detail"></section>
+
+  <!-- EDITORIAL 2 — split-screen narrativo -->
+  <section class="pdp-editorial" id="pdp-editorial-2"></section>
+
+  <!-- MOONPHASE (condicional, redesenhada) -->
+  <section class="moonphase-section" id="moonphase-section" style="display:none"></section>
+
+  <!-- HIGHLIGHTS DE TRANSIÇÃO + TABELA + FAQ -->
+  <section class="pdp-specs-visual" id="pdp-specs-visual"></section>
+  <section class="section pdp-detail-specs">
+    <div class="container-wide">
+      <div class="specs-layout">
+        <div class="specs-col" id="specs-details"></div>
+        <div class="specs-col" id="specs-faq"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="section pdp-related">
+    <div class="container-wide">
+      <h2 class="section-title reveal">Da mesma coleção</h2>
+      <div class="related-grid" id="related-grid"></div>
+    </div>
+  </section>
+</main>
+
+<div id="hm-footer"></div>
+<div class="page-transition"></div>
+
+<script type="application/ld+json" id="ld-product"></script>
+
+<script src="data/watches.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/moon.js"></script>
+<script src="assets/js/pdp.js"></script>
+</body>
+</html>
