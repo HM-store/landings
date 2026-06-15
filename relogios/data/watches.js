@@ -19,6 +19,7 @@ window.HM = (function () {
   const watches = [
     {
       id: "mission-moon",
+      collection: "moonswatch",
       name: "Mission to the Moon",
       ref: "SO33M100",
       subtitle: "O clássico que começou tudo.",
@@ -80,6 +81,7 @@ window.HM = (function () {
     },
     {
       id: "mission-mars",
+      collection: "moonswatch",
       name: "Mission to Mars",
       ref: "SO33R100",
       subtitle: "Vermelho não é cor. É atitude.",
@@ -141,6 +143,7 @@ window.HM = (function () {
     },
     {
       id: "mission-saturn",
+      collection: "moonswatch",
       name: "Mission to Saturn",
       ref: "SO33T100",
       subtitle: "Elegância em órbita.",
@@ -202,6 +205,7 @@ window.HM = (function () {
     },
     {
       id: "mission-uranus",
+      collection: "moonswatch",
       name: "Mission to Uranus",
       ref: "SO33L100",
       subtitle: "Frio como o espaço. Marcante como poucas peças.",
@@ -264,6 +268,7 @@ window.HM = (function () {
     },
     {
       id: "mission-moonphase",
+      collection: "moonswatch",
       name: "Mission to the Moonphase",
       ref: "SO33W700",
       subtitle: "Snoopy na lua. Poesia no pulso.",
@@ -326,6 +331,7 @@ window.HM = (function () {
     },
     {
       id: "mission-super-blue",
+      collection: "moonswatch",
       name: "Mission to the Super Blue Moonphase",
       ref: "SO33N700",
       subtitle: "19 dias de produção. Uma vida inteira de desejo.",
